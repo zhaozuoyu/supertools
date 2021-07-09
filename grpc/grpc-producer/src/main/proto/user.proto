@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "cn.zzy.grpc.user";
+option java_outer_classname = "UserServiceProto";
+
+package user;
+
+service UserService {
+   //简单RPC
+   rpc querySimpleInformation (RequestDTO) returns (ResponseDTO) {}
+   //服务端流式RPC
+   rpc queryServerStreamInformation (RequestDTO) returns (stream ResponseStreamDTO) {}
+   //客户端流式RPC
+   rpc queryClientStreamInformation (stream RequestStreamDTO) returns (ResponseDTO) {}
+   //双向流式RPC 
+   rpc queryServerAndClientStreamInformation (stream RequestStreamDTO) returns (stream ResponseStreamDTO) {}
+}
+
+message RequestDTO {
+  UserInputDTO userInputDTO = 1;
+}
+
+message ResponseDTO {
+  UserOutputDTO userOutputDTO = 1;
+}
+
+message RequestStreamDTO {
+  //注意：repeated关键字仅说明待传输的对象可能为一个集合
+  repeated UserInputDTO userInputDTOs = 1;
+}
+
+message ResponseStreamDTO {
+  //注意：repeated关键字仅说明待传输的对象可能为一个集合
+  repeated UserOutputDTO userOutputDTOs = 1;
+}
+
+message UserInputDTO {
+  int32 id  = 1;
+  string transactionId = 2;
+}
+
+message UserOutputDTO {
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  string gender = 4;
+}

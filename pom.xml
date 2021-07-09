@@ -11,6 +11,12 @@
     <modules>
         <module>common</module>
         <module>dubbo</module>
+        <module>spring</module>
+        <module>javassist</module>
+        <module>asm</module>
+        <module>nio</module>
+        <module>netty</module>
+        <module>grpc</module>
     </modules>
 
     <!-- 继承父包,此包会添加依赖,spring用到的核心包 -->
@@ -18,17 +24,18 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <!-- 注意：若使用jdbc作为访问数据库的工具，版本最好在1.5以上 -->
-        <version>1.5.8.RELEASE</version>
+        <version>2.2.2.RELEASE</version>
     </parent>
 
 
     <properties>
         <!-- 统一源码的编码方式 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.2.6.RELEASE</spring.version>
+        <spring.version>5.2.2.RELEASE</spring.version>
         <mybatis.version>3.4.1</mybatis.version>
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+        <maven.test.skip>true</maven.test.skip>
     </properties>
 
     <dependencies>
@@ -77,6 +84,18 @@
             <version>${slf4j.version}</version>
         </dependency>
         <!-- log END -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.6</version>
+        </dependency>
     </dependencies>
 
     <build>

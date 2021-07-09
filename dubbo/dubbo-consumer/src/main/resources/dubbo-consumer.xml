@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-lazy-init="false">
+
+    <dubbo:application name="supertools-dubbo-consumer" owner="zzy"/>
+    <!--开发环境注册地址-->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" port="20881"/>
+
+    <dubbo:reference id="userService"
+                     interface="cn.zzy.dubbo.service.IUserService"
+                     timeout="3000" check="false"/>
+
+
+</beans>
+
+

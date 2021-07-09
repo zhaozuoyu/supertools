@@ -1,0 +1,2 @@
+student=cn.zzy.dubbo.consumer.service.person.impl.Student
+teacher=cn.zzy.dubbo.consumer.service.person.impl.Teacher
