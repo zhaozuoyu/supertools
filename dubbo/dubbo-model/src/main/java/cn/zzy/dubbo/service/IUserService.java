@@ -9,4 +9,7 @@ import cn.zzy.dubbo.dto.UserDTO;
 public interface IUserService {
 
     Boolean saveUser(UserDTO userDTO);
+
+    UserDTO queryById(int id);
+
 }

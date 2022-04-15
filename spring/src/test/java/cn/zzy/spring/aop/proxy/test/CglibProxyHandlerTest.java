@@ -9,8 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import cn.zzy.spring.ApplicationRun;
 import cn.zzy.spring.aop.proxy.CglibProxyHandler;
-import cn.zzy.spring.service.ProxyService;
-import cn.zzy.spring.service.impl.ProxyServiceImpl;
+import cn.zzy.spring.service.proxy.ProxyService;
+import cn.zzy.spring.service.proxy.impl.ProxyServiceImpl;
 import net.sf.cglib.proxy.Enhancer;
 
 /**

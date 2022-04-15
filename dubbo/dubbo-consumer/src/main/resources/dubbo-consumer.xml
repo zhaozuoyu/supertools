@@ -16,6 +16,13 @@
                      interface="cn.zzy.dubbo.service.IUserService"
                      timeout="3000" check="false"/>
 
+    <dubbo:consumer>
+        <dubbo:reference interface="">
+            <dubbo:method name=""/>
+        </dubbo:reference>
+        <dubbo:parameter key="threads" value="300"></dubbo:parameter>
+    </dubbo:consumer>
+
 
 </beans>
 

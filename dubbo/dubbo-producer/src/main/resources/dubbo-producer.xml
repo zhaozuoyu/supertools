@@ -11,11 +11,20 @@
     <dubbo:application name="supertools-dubbo-producer" owner="zzy"/>
     <!--开发环境注册地址-->
     <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" port="20880"/>
+
     <dubbo:provider export="true"/>
 
     <bean id="userService" class="cn.zzy.dubbo.producer.service.impl.UserServiceImpl"/>
 
     <dubbo:service interface="cn.zzy.dubbo.service.IUserService" ref="userService"/>
+    <dubbo:service interface="cn.zzy.dubbo.service.IUserService"
+                   class="cn.zzy.dubbo.producer.service.impl.UserServiceImpl">
+        <!--<dubbo:parameter key="" value="" hide="true"></dubbo:parameter>
+        <dubbo:method name="">
+            <dubbo:argument type="" index=""></dubbo:argument>
+            <dubbo:parameter key="" value=""></dubbo:parameter>
+        </dubbo:method>-->
+    </dubbo:service>
 
 </beans>
 

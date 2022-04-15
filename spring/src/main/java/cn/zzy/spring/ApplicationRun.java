@@ -8,8 +8,10 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
 
-@EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
+//@EnableLoadTimeWeaving
+@EnableAspectJAutoProxy(exposeProxy = true)
 @SpringBootApplication(exclude = {MongoAutoConfiguration.class, DataSourceAutoConfiguration.class})
 public class ApplicationRun extends SpringBootServletInitializer implements CommandLineRunner {
 

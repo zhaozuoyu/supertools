@@ -24,4 +24,11 @@ public class UserServiceImpl implements IUserService {
         logger.info("userDTO:{}", JSON.toJSONString(userDTO));
         return true;
     }
+
+    @Override
+    public UserDTO queryById(int id) {
+        UserDTO userDTO =
+            new UserDTO().setId(id).setUsername("elise").setAge(22).setGender(1).setPassword("elise.password");
+        return userDTO;
+    }
 }

@@ -36,8 +36,10 @@ public class JdkProxyHandler implements InvocationHandler, Serializable {
     }
 
     public Object getProxy() {
+        /*return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
+            this.target.getClass().getInterfaces(), this);*/
         return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
-            this.target.getClass().getInterfaces(), this);
+                this.target.getClass().getInterfaces(), new JdkInvocationHandler());
     }
 
 }

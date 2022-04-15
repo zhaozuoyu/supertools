@@ -25,7 +25,7 @@ public class GenerateClassTest {
         try {
             ClassPool pool = ClassPool.getDefault();
             // 1. 创建一个空类
-            CtClass cc = pool.makeClass("cn.zzy.javassist.entity.Person");
+            CtClass cc = pool.makeClass("cn.zzy.javassist.dto.Person");
             // 2. 新增一个字段 private String username;
             CtField username = new CtField(pool.get("java.lang.String"), "username", cc);
             // 访问级别是 private
