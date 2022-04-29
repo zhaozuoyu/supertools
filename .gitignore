@@ -1,10 +1,29 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+#自定义
 target
 .settings
 .classpath
 .project
-.eclipse
 *.epoch
-*.log
 *.iml
-.idea
-/bin
+.idea/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
